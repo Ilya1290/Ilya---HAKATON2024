@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная - Стоматология</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Шапка с параллакс-эффектом -->
+    <header>
+        <nav>
+            <a href="index.html">Главная</a>
+            <a href="services.html">Услуги</a>
+            <a href="contact.html">Контакты</a>
+        </nav>
+        <h1>Добро пожаловать в нашу стоматологическую клинику</h1>
+        <p>Мы предлагаем высококачественное лечение и заботу о каждом пациенте</p>
+        <button onclick="location.href='contact.html'">Записаться на прием</button>
+    </header>
+
+    <!-- Преимущества -->
+    <section class="advantages fade-in">
+        <h2>Наши Преимущества</h2>
+        <div class="fade-in">
+            <img src="images/specialists.jpg" alt="Специалисты">
+            <h3>Опытные специалисты</h3>
+            <p>Квалифицированные врачи с бережным подходом к каждому пациенту.</p>
+        </div>
+        <div class="fade-in">
+            <img src="images/equipment.jpg" alt="Современное оборудование">
+            <h3>Современное оборудование</h3>
+            <p>Технологичное и безопасное оборудование для эффективного лечения.</p>
+        </div>
+        <div class="fade-in">
+            <img src="images/prices.jpg" alt="Доступные цены">
+            <h3>Доступные цены</h3>
+            <p>Мы предлагаем высокое качество по разумным ценам.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Стоматология. Все права защищены.</p>
+    </footer>
+
+    <!-- Скрипт для появления анимации при прокрутке -->
+    <script>
+        // Анимация появления элементов при прокрутке
+        const fadeInElements = document.querySelectorAll('.fade-in');
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        fadeInElements.forEach(element => {
+            observer.observe(element);
+        });
+    </script>
+</body>
+</html>
+
